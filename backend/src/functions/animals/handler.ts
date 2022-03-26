@@ -11,15 +11,20 @@ type GetAnimalsResponse = {
   animals: Animal[];
 };
 
-const animals: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async () => {
+const animals: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
+  event
+) => {
   const { access_token } = await auth();
+
+  const { body } = event;
+  const { type } = body;
 
   const { data } = await axios.get("https://api.petfinder.com/v2/animals", {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
     params: {
-      type: "cat",
+      type,
     },
   });
 
