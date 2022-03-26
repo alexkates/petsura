@@ -17,7 +17,7 @@ const animals: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
   const { access_token } = await auth();
 
   const { body } = event;
-  const { type } = body;
+  const { type, page } = body;
 
   const { data } = await axios.get("https://api.petfinder.com/v2/animals", {
     headers: {
@@ -25,6 +25,7 @@ const animals: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
     },
     params: {
       type,
+      page,
     },
   });
 
