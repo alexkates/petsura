@@ -10,6 +10,7 @@ export interface Animal {
   size: string;
   status: string;
   type: string;
+  url: string;
 }
 
 interface Photo {
