@@ -1,6 +1,6 @@
 import { gql, useQuery } from "@apollo/client";
 import type { NextPage } from "next";
-import { FaBirthdayCake } from "react-icons/fa";
+import { FaBirthdayCake, FaCat, FaDog } from "react-icons/fa";
 import { MdQueryStats } from "react-icons/md";
 import { AiOutlineColumnWidth } from "react-icons/ai";
 import { FaTwitter } from "react-icons/fa";
@@ -51,6 +51,7 @@ const FeedResponse: NextPage = () => {
       {data?.feed
         .filter((animal) => animal.photos.length > 0)
         .filter((animal) => animal.contact.email)
+        .filter((animal) => animal.url)
         .map((animal, i) => {
           const tweetText = `Check out this ${animal.type.toLocaleLowerCase()} named ${
             animal.name
@@ -89,6 +90,7 @@ const FeedResponse: NextPage = () => {
                 <a
                   href={`https://twitter.com/share?ref_src=twsrc%5Etfw&text=${tweetText}&url=${animal.url}&hashtags=petsura`}
                   className="text-3xl bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                  target={`_blank`}
                 >
                   <FaTwitter />
                 </a>
@@ -96,6 +98,7 @@ const FeedResponse: NextPage = () => {
                 <a
                   href={`mailto:${animal.contact?.email}?subject=${emailSubject}&body=${emailBody}`}
                   className="text-3xl bg-cyan-500 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded"
+                  target={`_blank`}
                 >
                   <AiOutlineMail />
                 </a>
@@ -113,8 +116,10 @@ const FeedResponse: NextPage = () => {
           })
         }
       >
-        <div className="flex items-center justify-center text-xl">
+        <div className="flex items-center justify-evenly text-xl">
+          <FaCat />
           <span>Get More Fluffs</span>
+          <FaDog />
         </div>
       </button>
     </div>
