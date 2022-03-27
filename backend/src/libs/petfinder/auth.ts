@@ -12,7 +12,7 @@ export const auth = async (): Promise<AuthResponse> => {
     {
       grant_type: "client_credentials",
       client_id: "91rAj3n32N8argY63PeBvK8GdLCWaxHaLhCVCue08HMydjoyag",
-      client_secret: "Dh8LZ0cO7jE0yV8sNSTYsv47Aq5ohRigNwh9wR5C",
+      client_secret: process.env.NEXT_PUBLIC_PETFINDER_CLIENT_SECRET,
     }
   );
 

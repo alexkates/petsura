@@ -4,7 +4,7 @@ import { FaBirthdayCake, FaCat, FaDog } from "react-icons/fa";
 import { MdQueryStats } from "react-icons/md";
 import { AiOutlineColumnWidth } from "react-icons/ai";
 import { FaTwitter } from "react-icons/fa";
-import { AiOutlineMail, AiOutlineReload } from "react-icons/ai";
+import { AiOutlineMail } from "react-icons/ai";
 import { FeedResponse } from "models/FeedResponse";
 
 const FeedResponse: NextPage = () => {
