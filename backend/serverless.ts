@@ -1,6 +1,6 @@
 import type { AWS } from "@serverless/typescript";
 
-import animals from "@functions/animals";
+import feed from "@functions/feed";
 
 const serverlessConfiguration: AWS = {
   service: "petsura",
@@ -19,7 +19,7 @@ const serverlessConfiguration: AWS = {
     },
   },
   // import the function via paths
-  functions: { animals },
+  functions: { feed },
   package: { individually: true },
   custom: {
     esbuild: {

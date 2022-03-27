@@ -1,1 +1,1 @@
-export { default as animals } from "./animals";
+export { default as feed } from "./feed";

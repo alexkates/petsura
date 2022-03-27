@@ -2,5 +2,5 @@
   "headers": {
     "Content-Type": "application/json"
   },
-  "body": "{\"type\":\"rabbit\"}"
+  "body": "{\"offset\":\"20\", \"limit\":\"10\"}"
 }
