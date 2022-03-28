@@ -2,7 +2,11 @@ import { gql, useQuery } from "@apollo/client";
 import type { NextPage } from "next";
 import { FaBirthdayCake, FaCat, FaDog } from "react-icons/fa";
 import { MdQueryStats } from "react-icons/md";
-import { AiOutlineColumnWidth } from "react-icons/ai";
+import {
+  AiOutlineColumnWidth,
+  AiOutlineExport,
+  AiOutlineShareAlt,
+} from "react-icons/ai";
 import { FaTwitter } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import { FeedResponse } from "models/FeedResponse";
@@ -128,6 +132,14 @@ const FeedResponse: NextPage = () => {
                     target={`_blank`}
                   >
                     <AiOutlineMail />
+                  </a>
+
+                  <a
+                    href={animal.url}
+                    className="text-3xl bg-slate-500 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded"
+                    target={`_blank`}
+                  >
+                    <AiOutlineExport />
                   </a>
                 </div>
               </div>
